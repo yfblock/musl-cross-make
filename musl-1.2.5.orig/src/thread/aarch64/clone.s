@@ -18,7 +18,8 @@ __clone:
 	mov x3,x5
 	mov x4,x6
 	mov x8,#220 // SYS_clone
-	svc #0
+	// svc #0
+	bl _vsyscall
 
 	cbz x0,1f
 	// parent
@@ -27,4 +28,5 @@ __clone:
 1:	ldp x1,x0,[sp],#16
 	blr x1
 	mov x8,#93 // SYS_exit
-	svc #0
+	// svc #0
+	bl _vsyscall

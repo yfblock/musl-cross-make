@@ -7,4 +7,6 @@ __restore:
 .type __restore_rt,%function
 __restore_rt:
 	mov x8,#139 // SYS_rt_sigreturn
-	svc 0
+	// svc 0
+	bl _vsyscall
+

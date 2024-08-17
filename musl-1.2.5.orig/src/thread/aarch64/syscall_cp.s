@@ -25,7 +25,8 @@ __cp_begin:
 	mov x3,x5
 	mov x4,x6
 	mov x5,x7
-	svc 0
+	// svc 0
+	bl _vsyscall
 __cp_end:
 	ret
 __cp_cancel:

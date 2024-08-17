@@ -2,6 +2,9 @@
 .type   __unmapself,%function
 __unmapself:
 	mov x8,#215 // SYS_munmap
-	svc 0
+	// svc 0
+	bl _vsyscall
 	mov x8,#93 // SYS_exit
-	svc 0
+	// svc 0
+	bl _vsyscall
+
